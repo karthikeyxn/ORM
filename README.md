@@ -24,15 +24,16 @@ Enter the code for admin.py and models.py
 Execute Django admin and create 10 Football players
 
 ## PROGRAM
-```
-Admin.py
 
+## Admin.py
+```
 from django.contrib import admin
 from .Models import Employee,EmployeeAdmin
 admin.site.register(Employee,EmployeeAdmin)
+```
+## Models.py
 
-Models.py
-
+```
 from django.db import models
 from django.contrib import admin
 class Employee (models.Model):
@@ -45,6 +46,7 @@ class Employee (models.Model):
 class EmployeeAdmin(admin.ModelAdmin):
     list_display=('eid','name','salary','age','email')
 ```
+
 ## OUTPUT
 ![Output](https://github.com/Darkwebnew/ORM/assets/143114486/57dd6b2a-dd9e-4083-a1d0-2bc16b2aa0d3)
 ## RESULT
