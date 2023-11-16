@@ -1,4 +1,4 @@
-# Ex02 Django ORM Web Application
+# EX 02 Django ORM Web Application
 
 ## Date: 14/09/2023
 
