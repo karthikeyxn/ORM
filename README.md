@@ -1,6 +1,6 @@
 # EX 02 Django ORM Web Application
 
-## Date: 26/09/2023
+## Date: 01/09/2024
 
 ## AIM
 To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
