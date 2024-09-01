@@ -25,9 +25,11 @@ Execute Django admin and create details for 10 books
 
 ```
 from django.contrib import admin
-from .models import Customer, Loan, CustomerAdmin, LoanAdmin
+from .models import Loan  # Import only the Loan model
 
-admin.site.register(Customer, CustomerAdmin)
+class LoanAdmin(admin.ModelAdmin):
+    list_display = ('loan_id', 'customer_name', 'amount', 'interest_rate', 'duration', 'start_date')
+
 admin.site.register(Loan, LoanAdmin)
 ```
 
@@ -37,35 +39,27 @@ admin.site.register(Loan, LoanAdmin)
 from django.db import models
 from django.contrib import admin
 
-class Customer(models.Model):
-    customer_id = models.CharField(max_length=20, help_text="Customer ID")
-    name = models.CharField(max_length=100)
-    address = models.TextField()
-    phone = models.CharField(max_length=15)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.name
-
 class Loan(models.Model):
     loan_id = models.CharField(max_length=20, help_text="Loan ID")
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=100, help_text="Customer Name")
+    customer_address = models.CharField(max_length=255, help_text="Customer Address")
+    customer_phone = models.CharField(max_length=20, help_text="Customer Phone Number")
+    customer_email = models.EmailField(help_text="Customer Email Address")
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     interest_rate = models.DecimalField(max_digits=5, decimal_places=2)
     duration = models.IntegerField(help_text="Duration in months")
     start_date = models.DateField()
 
     def __str__(self):
-        return f"{self.loan_id} - {self.customer.name}"
+        return f"{self.loan_id} - {self.customer_name}"
 
 class LoanAdmin(admin.ModelAdmin):
-    list_display = ('loan_id', 'customer', 'amount', 'interest_rate', 'duration', 'start_date')
-
-class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('customer_id', 'name', 'address', 'phone', 'email')
+    list_display = ('loan_id', 'customer_name', 'amount', 'interest_rate', 'duration', 'start_date')
 ```
 
 ## OUTPUT
-![Output](https://github.com/Darkwebnew/ORM/assets/143114486/57dd6b2a-dd9e-4083-a1d0-2bc16b2aa0d3)
+
+
+
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
