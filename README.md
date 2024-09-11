@@ -1,4 +1,4 @@
-# EX 02 Django ORM Web Application
+# EX 03 Django ORM Web Application
 
 ## Date: 01/09/2024
 
