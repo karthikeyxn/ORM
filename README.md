@@ -53,6 +53,10 @@ class Loan(models.Model):
         return f"Loan ID: {self.loan_id} - {self.customer_name}"
 ```
 
+## SAMPLE ER DIAGRAM:
+
+![ORM(1)](https://github.com/user-attachments/assets/7303c463-2f53-4434-86e5-632330b17617)
+
 ## OUTPUT
 
 ![Screenshot 2024-09-01 211854](https://github.com/user-attachments/assets/ccd126ae-3b9a-4a0a-a479-dd468b5691c7)
