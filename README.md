@@ -6,6 +6,9 @@
 To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
+
+![ORM(1)](https://github.com/user-attachments/assets/7303c463-2f53-4434-86e5-632330b17617)
+
 ## DESIGN STEPS
 ## STEP 1:
 Clone the problem from GitHub
@@ -52,10 +55,6 @@ class Loan(models.Model):
     def __str__(self):
         return f"Loan ID: {self.loan_id} - {self.customer_name}"
 ```
-
-## SAMPLE ER DIAGRAM:
-
-![ORM(1)](https://github.com/user-attachments/assets/7303c463-2f53-4434-86e5-632330b17617)
 
 ## OUTPUT
 
